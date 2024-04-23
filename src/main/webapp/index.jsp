@@ -34,6 +34,12 @@
             <input type="text" id="animalId" name="id">
             <button type="submit">Show Animal Information</button>
         </form>
+        <br>
+        <form action="/animal/id" method="post">
+            <label for="animalId">Enter Animal ID:</label>
+            <input type="text" id="animalId1" name="id">
+            <button type="submit">Delete Animal</button>
+        </form>
     </div>
 </div>
 </body>
