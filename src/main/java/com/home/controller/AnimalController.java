@@ -55,4 +55,5 @@ public class AnimalController {
     public String updateAnimal(@RequestParam("name") String name, @RequestParam("id") Long id, @RequestParam("age") Integer age, @RequestParam("place") String place) {
         return animalService.updateAnimaml(id, name, age, place) ? "cool" : "failed";
     }
+    // zcnfeikcwner
 }
