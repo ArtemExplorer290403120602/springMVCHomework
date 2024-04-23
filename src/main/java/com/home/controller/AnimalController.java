@@ -31,7 +31,7 @@ public class AnimalController {
     }
 
     @GetMapping("/id")
-    public String getAnimalById(@RequestParam("id") Long id, ModelMap modelMap) { //TODO: Спросить почему не работает с @PathVariable
+    public String getAnimalById(@RequestParam("id") Long id, ModelMap modelMap) { //TODO: Спросить почему не работает с @PathVariable во всех
         Optional<Animal> animal = animalService.getAnimalById(id);
         if (animal.isPresent()) {
             modelMap.addAttribute("animal", animal.get());
@@ -43,5 +43,16 @@ public class AnimalController {
     @PostMapping("/id")
     public String deleteAnimal(@RequestParam("id") Long id) {
         return animalService.deleteAnimal(id) ? "cool" : "failed";
+    }
+
+    @PostMapping()
+    public String createAnimal(@RequestParam("name") String name, @RequestParam("age") Integer age, @RequestParam("place") String place) {
+        boolean br = animalService.createAnimal(name, age, place); //TODO: УЗНАТЬ ПОЧЕМУ НЕ МОГУ ДОБАВИТЬ
+        return br ? "cool" : "failed";
+    }
+
+    @PostMapping("/update")
+    public String updateAnimal(@RequestParam("name") String name, @RequestParam("id") Long id, @RequestParam("age") Integer age, @RequestParam("place") String place) {
+        return animalService.updateAnimaml(id, name, age, place) ? "cool" : "failed";
     }
 }

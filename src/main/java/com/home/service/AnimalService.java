@@ -38,11 +38,12 @@ public class AnimalService {
 
     //добавляем животное
     public Boolean createAnimal(String name, Integer age, String place) {
-        animal.setName(name);
-        animal.setAge(age);
-        animal.setPlace(place);
-        animal.setBirth(Timestamp.valueOf(LocalDateTime.now()));
-        return animalRepository.createAnimal(animal);
+        Animal animal1 = new Animal();
+        animal1.setName(name);
+        animal1.setAge(age);
+        animal1.setPlace(place);
+        animal1.setBirth(Timestamp.valueOf(LocalDateTime.now()));
+        return animalRepository.createAnimal(animal1);
     }
 
     //обновляем животное

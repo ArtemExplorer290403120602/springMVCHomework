@@ -12,8 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
-
 import java.sql.Timestamp;
+
 
 @Component
 @Entity(name = "animls")
@@ -38,4 +38,6 @@ public class Animal {
     @Column(name = "birth")
     @Temporal(TemporalType.TIMESTAMP)
     private Timestamp birth;
+
+
 }
