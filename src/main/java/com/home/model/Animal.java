@@ -38,4 +38,6 @@ public class Animal {
     @Column(name = "birth")
     @Temporal(TemporalType.TIMESTAMP)
     private Timestamp birth;
+
+
 }
